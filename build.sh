@@ -27,6 +27,4 @@ pip install -U git+https://github.com/m-bain/whisperx.git
 vad_model_dir=models/vad
 mkdir -p $vad_model_dir
 
-download $(python3 ./get_vad_model_url.py) "$vad_model_dir/whisperx-vad-segmentation.bin"
-
-cog run python
+download $(curl -s https://raw.githubusercontent.com/victor-upmeet/whisperx-replicate/refs/heads/main/get_vad_model_url.py | python3) "$vad_model_dir/whisperx-vad-segmentation.bin"
